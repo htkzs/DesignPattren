@@ -7,7 +7,7 @@ package com.designpattren;
 public class FactoryMethod {
     public static void main(String[] args) {
         Application app = new ConCreateProductA();
-        Product object = app.getObject();
+        Product object = (Product) app.getObject();
         object.method1();
 
     }
@@ -32,7 +32,7 @@ class simpleFactory {
 interface Product{
     void method1();
 }
-class ProductB implements Product{
+class ProductB implements Product {
     //假设方法method1()这段代码是永不改变的逻辑
     public void method1(){
 
@@ -40,7 +40,7 @@ class ProductB implements Product{
     }
 
 }
-class ProductA implements Product{
+class ProductA implements Product {
     //假设方法method1()这段代码是永不改变的逻辑
     public void method1(){
 
